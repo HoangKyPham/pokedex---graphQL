@@ -1,0 +1,16 @@
+type PokemonType {
+  name: String!
+}
+
+type Pokemon {
+  id: ID!
+  name: String!
+  __type: String!
+}
+
+type Query {
+  pokemon(id: ID!): Pokemon
+  pokemons: [Pokemon!]!
+}
+
+

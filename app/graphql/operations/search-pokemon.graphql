@@ -1,0 +1,24 @@
+query SearchPokemon($name: String!, $limit: Int!, $offset: Int!) {
+  pokemon_v2_pokemon(
+    where: { name: { _ilike: $name } }
+    limit: $limit
+    offset: $offset
+  ) {
+    id
+    name
+    pokemon_v2_pokemontypes {
+      pokemon_v2_type {
+        name
+      }
+    }
+    pokemon_v2_pokemonsprites {
+      sprites
+    }
+  }
+
+  pokemon_v2_pokemon_aggregate(where: { name: { _ilike: $name } }) {
+    aggregate {
+      count
+    }
+  }
+}

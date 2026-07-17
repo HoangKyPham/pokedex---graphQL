@@ -1,0 +1,35 @@
+query GetPokemonDetail($id: Int!) {
+  pokemon_v2_pokemon_by_pk(id: $id) {
+    id
+    name
+    weight
+    height
+    pokemon_v2_pokemonabilities {
+      pokemon_v2_ability {
+        name
+      }
+    }
+    pokemon_v2_pokemontypes {
+      pokemon_v2_type {
+        name
+      }
+    }
+    pokemon_v2_pokemonstats {
+      base_stat
+      pokemon_v2_stat {
+        name
+      }
+    }
+    pokemon_v2_pokemonspecy {
+      gender_rate
+      pokemon_v2_pokemonegggroups {
+        pokemon_v2_egggroup {
+          name
+        }
+      }
+    }
+    pokemon_v2_pokemonsprites {
+      sprites
+    }
+  }
+}
